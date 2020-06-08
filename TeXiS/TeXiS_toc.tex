@@ -1,0 +1,87 @@
+%---------------------------------------------------------------------
+%
+%                          TeXiS_toc.tex
+%
+%---------------------------------------------------------------------
+%
+% Contiene  los  comandos  para  generar los  índices  del  documento,
+% entendiendo por índices las tablas de contenidos.
+%
+% Genera  el  índice normal  ("tabla  de  contenidos"),  el índice  de
+% figuras y el de tablas. También  crea "marcadores" en el caso de que
+% se esté compilando con pdflatex para que aparezcan en el PDF.
+%
+%---------------------------------------------------------------------
+
+
+% Primero un poquito de configuración...
+
+
+% Pedimos que inserte todos los epígrafes hasta el nivel \subsection en
+% la tabla de contenidos.
+\setcounter{tocdepth}{2} 
+
+% Le  pedimos  que nos  numere  todos  los  epígrafes hasta  el  nivel
+% \subsubsection en el cuerpo del documento.
+\setcounter{secnumdepth}{3} 
+
+
+% Creamos los diferentes índices.
+
+% Lo primero un  poco de trabajo en los marcadores  del PDF. No quiero
+% que  salga una  entrada  por cada  índice  a nivel  0...  si no  que
+% aparezca un marcador "Índices", que  tenga dentro los otros tipos de
+% índices.  Total, que creamos el marcador "Índices".
+% Antes de  la creación  de los índices,  se añaden los  marcadores de
+% nivel 1.
+
+\ifpdf
+   \pdfbookmark{Índices}{indices}
+\fi
+
+% Tabla de contenidos.
+%
+% La  inclusión  de '\tableofcontents'  significa  que  en la  primera
+% pasada  de  LaTeX  se  crea   un  fichero  con  extensión  .toc  con
+% información sobre la tabla de contenidos (es conceptualmente similar
+% al  .bbl de  BibTeX, creo).  En la  segunda ejecución  de  LaTeX ese
+% documento se utiliza para  generar la verdadera página de contenidos
+% usando la  información sobre los  capítulos y demás guardadas  en el
+% .toc
+\ifpdf
+   \pdfbookmark[1]{Tabla de contenidos}{tabla de contenidos}
+\fi
+
+\cabeceraEspecial{\'Indice}
+
+\tableofcontents
+
+\newpage 
+
+% Índice de figuras
+%
+% La idea es semejante que para  el .toc del índice, pero ahora se usa
+% extensión .lof (List Of Figures) con la información de las figuras.
+
+\cabeceraEspecial{\'Indice de figuras}
+
+\ifpdf
+   \pdfbookmark[1]{Índice de figuras}{indice de figuras}
+\fi
+
+\listoffigures
+
+\newpage
+
+% Índice de tablas
+% Como antes, pero ahora .lot (List Of Tables)
+
+\ifpdf
+   \pdfbookmark[1]{Índice de tablas}{indice de tablas}
+\fi
+
+\cabeceraEspecial{\'Indice de tablas}
+
+\listoftables
+
+\newpage

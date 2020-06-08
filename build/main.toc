@@ -1,0 +1,11 @@
+\babel@toc {spanish}{}
+\contentsline {chapter}{Agradecimientos}{\es@scroman {ix}}{chapter*.1}%
+\contentsline {chapter}{Resumen}{\es@scroman {xi}}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introducci\'on}{1}{section.1.1}%
+\contentsline {section}{Notas bibliogr\'aficas}{1}{section.1.1}%
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {A}As\IeC {\'\i } se hizo...}{3}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Introducci\'on}{3}{section.Alph1.1}%
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{5}{appendix*.6}%
+\contentsline {chapter}{Lista de acr\'onimos}{6}{appendix*.6}%

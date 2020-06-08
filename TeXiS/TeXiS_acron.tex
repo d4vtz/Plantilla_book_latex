@@ -1,0 +1,45 @@
+%---------------------------------------------------------------------
+%
+%                        TeXiS_acron.tex
+%
+%---------------------------------------------------------------------
+%
+% Contiene  los  comandos  para  generar  el listado de acrónimos
+% documento.
+%
+%---------------------------------------------------------------------
+%
+% NOTA IMPORTANTE:  para que la  generación de acrónimos  funcione, al
+% menos  debe  existir  un  acrónimo   en  el  documento.  Si  no,  la
+% compilación  del   fichero  LaTeX  falla  con   un  error  "extraño"
+% (indicando  que  quizá  falte  un \item).   Consulta  el  comentario
+% referente al paquete glosstex en TeXiS_pream.tex.
+%
+%---------------------------------------------------------------------
+
+
+% Redefinimos a español  el título de la lista  de acrónimos (Babel no
+% lo hace por nosotros esta vez)
+
+\def\listacronymname{Lista de acrónimos}
+
+% Para el glosario:
+% \def\glosarryname{Glosario}
+
+% Si se  va a generar  la tabla de  contenidos (el índice  habitual) y
+% también vamos a  generar la lista de acrónimos  (ambas decisiones se
+% toman en  función de  la definición  o no de  un par  de constantes,
+% puedes consultar config.tex  para más información), entonces metemos
+% en la  tabla de contenidos una  entrada para marcar  la página donde
+% está el índice de palabras.
+
+\ifx\generatoc\undefined
+\else
+   \addcontentsline{toc}{chapter}{\listacronymname}
+\fi
+
+
+% Generamos la lista de acrónimos (en realidad el índice asociado a la
+% lista "acr" de GlossTeX)
+
+\printglosstex(acr)
